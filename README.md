@@ -91,7 +91,7 @@ $ devtool build linux-yocto
 $ cd ~
 $ devtool build-image core-image-base
 $ runqemu qemux86
-# dmesg | less
+$ dmesg | less
 $ cd poky_sdk/workspace/sources/linux-yocto
 $ git status
 $ git add init/calibrate.c
