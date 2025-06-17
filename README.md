@@ -86,7 +86,7 @@ Add in local.conf:
 Kernel Develop and Debug in Yocto:
 $ devtool modify linux-yocto
 $ cd build/workspace/sources/linux-yocto/
-Add printk in init/calibrate.c
+Add printk in init/calibrate.c calibrate_delay
 $ devtool build linux-yocto
 $ cd ~
 $ devtool build-image core-image-base
