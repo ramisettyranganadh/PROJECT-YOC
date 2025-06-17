@@ -83,3 +83,20 @@ Add in local.conf:
 7. bitbake core-image-minimal -c cleanall
 8. bitbake core-image-minimal
 
+Kernel Develop and Debug in Yocto:
+$ devtool modify linux-yocto
+$ cd build/workspace/sources/linux-yocto/
+Add printk in init/calibrate.c
+$ devtool build linux-yocto
+$ cd ~
+$ devtool build-image core-image-base
+$ runqemu qemux86
+# dmesg | less
+$ cd poky_sdk/workspace/sources/linux-yocto
+$ git status
+$ git add init/calibrate.c
+$ git commit -m "calibrate: Add printk example"
+$ devtool finish linux-yocto ~/PROJECT-MLR
+$ cd poky/build
+$ bitbake core-image-base
+
