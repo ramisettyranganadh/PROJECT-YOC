@@ -8,10 +8,11 @@ README.poky.md
 
 1. mkdir Yocto; cd Yocto;
 2. git clone https://github.com/yoctoproject/poky.git; git checkout origin/styhead;
+3. bitbake -c menuconfig virtual/kernel
 
 For Raspberry Pi :
 1. git clone https://github.com/agherzan/meta-raspberrypi.git;
-2. cd poky; source oe-init-build-env
+2. cd poky; source oe-init-build-env; bitbake -c menuconfig virtual/kernel
 3. bitbake-layers add-layer ../../meta-raspberrypi;
 Add in local.conf:
 1. MACHINE = "raspberrypi5"
@@ -20,7 +21,7 @@ Add in local.conf:
 
 For Beagle Bone Black :
 1. git clone https://github.com/Angstrom-distribution/meta-ti.git;
-2. cd poky; source oe-init-build-env
+2. cd poky; source oe-init-build-env; bitbake -c menuconfig virtual/kernel
 3. bitbake-layers add-layer ../../meta-ti;
 Add in local.conf:
 1. MACHINE = "beaglebone-yocto"
