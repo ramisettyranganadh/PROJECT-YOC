@@ -38,6 +38,8 @@ Add in local.conf:
 
 ---------------------------Load Images from UART---------------------------
 
+https://github.com/niekiran/EmbeddedLinuxBBB/tree/master/pre-built-images/serial-boot
+
 1. Press S2 and Power ON, Press Ctrl A + S and select Xmodem then select u-boot-spl.bin, u-boot.img
 2. Press space and Enter to select and transfer a file over Serial Xmodem
 3. Enter UBOOT -> loadx 0x82000000 -> Press Ctrl A + S then select uImage
