@@ -36,6 +36,16 @@ Add in local.conf:
 4. bzip2 -d -f core-image-base-raspberrypi5.rootfs.wic.bz2
 5. sudo dd if=core-image-base-raspberrypi5.rootfs.wic of=/dev/mmcblk0 status=progress bs=4M
 
+---------------------------Load Images from UART---------------------------
+
+1. Press S2 and Power ON, Press Ctrl A + S and select Xmodem then select u-boot-spl.bin, u-boot.img
+2. Press space and Enter to select and transfer a file over Serial Xmodem
+3. Enter UBOOT -> loadx 0x82000000 -> Press Ctrl A + S then select uImage
+4. Enter UBOOT -> loadx 0x88000000 -> Press Ctrl A + S then select dtb
+5. Enter UBOOT -> loadx 0x88080000 -> Press Ctrl A + S then select initramfs
+6. Enter UBOOT -> setenv bootargs console=ttyO0,115200 root=/dev/ram0 rw initrd=0x88080000
+7. Enter UBOOT -> bootm 0x82000000 0x88080000 0x88000000
+
 ----------------------Debug Probe Serial Communication---------------------
 
 1. minicom -b 115200 -o -D /dev/ttyACM0
