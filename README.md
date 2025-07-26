@@ -8,7 +8,8 @@ README.poky.md
 
 1. mkdir Yocto; cd Yocto;
 2. git clone https://github.com/yoctoproject/poky.git; git checkout origin/styhead;
-3. bitbake -c menuconfig virtual/kernel
+3. bitbake virtual/bootloader
+4. bitbake -c menuconfig virtual/kernel
 
 For Raspberry Pi :
 1. git clone https://github.com/agherzan/meta-raspberrypi.git;
